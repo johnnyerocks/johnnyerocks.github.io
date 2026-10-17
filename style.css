@@ -816,3 +816,8 @@ body { background:radial-gradient(ellipse at 90% 75%,#35131266,transparent 58%),
 :focus-visible { outline:2px solid #d6b697; outline-offset:5px; }
 @media(max-width:950px) { .node:nth-child(2) { border-right:0; } .node:nth-child(-n+2) { border-bottom:1px solid #78665a55; } }
 @media(max-width:600px) { .hero { padding:30px 0; } .hero .role { font-size:11px; letter-spacing:.14em; } .node { min-height:185px; border-right:0; border-bottom:1px solid #78665a55; } .node:last-child { border-bottom:0; } .node .label { font-size:32px; } .portfolio-top { font-size:10px; letter-spacing:.08em; } }
+
+/* Slow independent swell remains active even with sound muted. */
+.title-logo { mix-blend-mode:normal; animation:logo-swell 8s ease-in-out infinite; transform-origin:center; }
+@keyframes logo-swell { 0%,100% { transform:scale(.965); filter:brightness(.94); } 50% { transform:scale(1.025); filter:brightness(1.06); } }
+@media(prefers-reduced-motion:reduce) { .title-logo { animation:none; transform:none; filter:none; } }
