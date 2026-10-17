@@ -769,3 +769,50 @@ body { background: radial-gradient(ellipse at 50% 15%, #1c242d 0, transparent 44
 .about-copy .about-role { color: #e2b4ad; font-size: 12px; line-height: 1.6; }
 .about-copy .close { margin-top: 22px; padding: 10px 18px; border: 1px solid #798e9e60; opacity: 1; }
 @media (max-width: 640px) { #about-overlay { padding: 16px; } #about-overlay .about-card { grid-template-columns: 1fr; gap: 22px; padding: 20px; } .about-portrait { max-width: 300px; margin: 0 auto; } }
+/* Johnny E — painted steel, oxblood and ivory. */
+:root { --bone:#e7ddca; --headlight:#eee4d2; --steel:#b9b4aa; --signal-blue:#d8cbb5; --tail-light:#a82c2a; --acid:#e7ddca; --violet:#b9b4aa; }
+html, body { background:#0d0c0b; color:var(--bone); }
+body { background:radial-gradient(ellipse at 90% 75%,#35131266,transparent 58%),#0d0c0b; }
+.container { max-width:1500px; margin:auto; padding-bottom:100px; }
+.container::before { opacity:.13; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.32' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.portfolio-top { position:relative; z-index:1; border-bottom:1px solid #78665a66; font:600 12px 'Barlow Condensed',sans-serif; letter-spacing:.18em; color:#b5a997; }
+.portfolio-top a { color:#e7ddca; }
+.hero { padding:26px 0 36px; }
+#about-trigger { width:min(760px,100%); }
+.title-logo { width:100%; height:auto; margin:auto; opacity:1; filter:none; transform:none; mix-blend-mode:screen; }
+.hero h1 { text-shadow:none; }
+.hero .role { margin-top:8px; font:600 14px 'Barlow Condensed',sans-serif; letter-spacing:.28em; color:#d1bda1; }
+.work-section::before { display:none; }
+.categories { gap:0; border-top:3px solid #9c2927; border-bottom:1px solid #78665a88; }
+.categories .node:nth-child(n) { transform:none; }
+.node { border:0; border-right:1px solid #78665a55; border-radius:0; background:linear-gradient(150deg,#27231f66,#100d0b66); padding:28px 25px; min-height:230px; color:var(--bone); }
+.node:last-child { border-right:0; }
+.node::before { top:0; left:0; height:3px; width:0; background:#e0c9a6; }
+.node::after { display:none; }
+.categories .node:hover,.categories .node:focus-visible { transform:none; background:#3b181666; box-shadow:inset 0 -3px #a82c2a; }
+.node:hover::before { width:100%; }
+.node-number { color:#b59b7d; font:600 11px 'Barlow Condensed',sans-serif; letter-spacing:.16em; }
+.node .label { color:#e7ddca; font-weight:700; font-style:italic; letter-spacing:.035em; text-shadow:2px 2px #501b19; font-size:clamp(27px,2.6vw,38px); }
+.node-description { color:#bcb5a9; font-size:13px; }
+.node-bottom { color:#d5b9a6; font:600 12px 'Barlow Condensed',sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.node .dot,.contact .dot { background:#b33a32; box-shadow:none; border-radius:0; transform:rotate(45deg); }
+.contact a { border-radius:0; border:1px solid #8f7160; background:#17120f; padding:13px 32px; font:600 14px 'Barlow Condensed',sans-serif; letter-spacing:.16em; color:var(--bone); }
+.contact a:hover { background:#3b1816; border-color:#b54a3c; text-shadow:none; }
+.sound-toggle,.site-credit { background:transparent; color:#aa9c89; }
+.sound-toggle { font:600 11px 'Barlow Condensed',sans-serif; letter-spacing:.12em; }
+.overlay,.picture-overlay { background:rgba(13,11,10,.98); backdrop-filter:blur(8px); }
+.picture-item,#nonlinear-overlay .picture-item { background:#1b1713; border:1px solid #75614b66; border-top:3px solid #9c2927; box-shadow:0 16px 40px #0005; }
+.project-text { color:#d5cebf; }
+.project-text strong,.project-title { color:#eee2cd; font-style:italic; text-transform:uppercase; font-weight:700; }
+.project-text a { color:#e6a48d; }
+.project-text .rights { color:#a79c8b; }
+.picture-close { border-radius:0; background:#201714; border:1px solid #956d56; color:#eadcc6; }
+#about-overlay .about-card { background:#1a1512; border:1px solid #75614b88; border-top:3px solid #9c2927; }
+.about-portrait { border-radius:0; border:1px solid #8a6e4b66; }
+.about-copy h2 { font-weight:700; font-style:italic; text-transform:uppercase; color:#eee2cd; }
+.about-copy p { color:#d0c6b6; }
+.about-copy .about-role { color:#d1a28e; }
+.about-copy .close { border-color:#8e6a52; color:#eee2cd; }
+:focus-visible { outline:2px solid #d6b697; outline-offset:5px; }
+@media(max-width:950px) { .node:nth-child(2) { border-right:0; } .node:nth-child(-n+2) { border-bottom:1px solid #78665a55; } }
+@media(max-width:600px) { .hero { padding:30px 0; } .hero .role { font-size:11px; letter-spacing:.14em; } .node { min-height:185px; border-right:0; border-bottom:1px solid #78665a55; } .node:last-child { border-bottom:0; } .node .label { font-size:32px; } .portfolio-top { font-size:10px; letter-spacing:.08em; } }

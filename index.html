@@ -7,29 +7,29 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=cinematic-preview">
+  <link rel="stylesheet" href="style.css?v=1982-rock-1">
 </head>
 <body>
 
 <main class="container" id="app">
 
-  <div class="portfolio-top"><span>Independent music &amp; sound</span><a href="mailto:john.ryder.production@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></div>
+  <div class="portfolio-top"><span>Original music &amp; sound</span><a href="mailto:john.ryder.production@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
   <section class="hero">
-    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><img class="title-logo" src="johnny-e-chrome-signature.png" alt="Johnny E" width="1402" height="1122" style="margin-inline:auto;width:auto;max-width:100%;height:clamp(190px,28vw,285px);object-fit:contain" fetchpriority="high"></button></h1>
-    <p class="role">Music and sound for the space in between</p>
+    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><img class="title-logo" src="johnny-e-1982.png" alt="Johnny E" width="1774" height="887" fetchpriority="high"></button></h1>
+    <p class="role">Musician · Composer · Sound Designer</p>
 
   </section>
 
   <section class="work-section" aria-label="Portfolio work">
     <div class="categories">
-      <button type="button" class="node picture-node" data-note="164.81" data-pan="-0.4"><span class="node-number">01 / Moving image</span><span class="label">Picture</span><span class="node-description">Music and sound for film, animation and brands.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
-      <button type="button" class="node nonlinear-node" data-note="174.61" data-pan="0.35"><span class="node-number">02 / Playable worlds</span><span class="label">Interactive</span><span class="node-description">Responsive sound and music for games.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
-      <button type="button" class="node redesign-node" data-note="196" data-pan="-0.15"><span class="node-number">03 / Another perspective</span><span class="label">Redesigns</span><span class="node-description">Familiar scenes. An entirely different feeling.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
-      <button type="button" class="node composition-node" data-note="220" data-pan="0.2"><span class="node-number">04 / Original music</span><span class="label">Compositions</span><span class="node-description">Atmosphere, movement and musical storytelling.</span><span class="node-bottom"><span class="dot"></span>Listen <span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="node picture-node" data-note="146.83" data-pan="-0.4"><span class="node-number">Side A / 01</span><span class="label">Picture</span><span class="node-description">Music and sound for film, animation and brands.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="node nonlinear-node" data-note="174.61" data-pan="0.35"><span class="node-number">Side A / 02</span><span class="label">Interactive</span><span class="node-description">Responsive sound and music for games.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="node redesign-node" data-note="196" data-pan="-0.15"><span class="node-number">Side B / 01</span><span class="label">Redesigns</span><span class="node-description">Familiar scenes. An entirely different feeling.</span><span class="node-bottom"><span class="dot"></span>View projects <span aria-hidden="true">↗</span></span></button>
+      <button type="button" class="node composition-node" data-note="220" data-pan="0.2"><span class="node-number">Side B / 02</span><span class="label">Compositions</span><span class="node-description">Atmosphere, movement and musical storytelling.</span><span class="node-bottom"><span class="dot"></span>Listen <span aria-hidden="true">↗</span></span></button>
     </div>
   </section>
 
-  <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">Mute ambience</button>
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">Sound off</button>
 
   <span class="site-credit">Site and sound by John Ryder Productions</span>
 
@@ -42,7 +42,7 @@
   <!-- ABOUT OVERLAY -->
   <div class="overlay hidden" id="about-overlay">
     <div class="overlay-content about-card">
-      <img class="about-portrait" src="john-ryder-portrait.png?v=20261017" alt="Stylised portrait of John Emslie, known as Johnny E" width="1374" height="1145" loading="lazy">
+      <img class="about-portrait" src="johnny-e-portrait-1982.png" alt="Stylised portrait of John Emslie, known as Johnny E" width="1374" height="1145" loading="lazy">
       <div class="about-copy">
         <h2>Johnny E</h2>
         <p class="about-role">Musician · Composer · Sound Designer</p>
@@ -436,7 +436,7 @@
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/johnryderproductions/sets/compositions&color=%23222222&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/johnryderproductions/sets/compositions&color=%239c2927&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
         </iframe>
       </div>
     </div>
@@ -540,17 +540,27 @@ function initAudio() {
   const compressor = ctx.createDynamicsCompressor(); compressor.threshold.value = -18; compressor.knee.value = 20; compressor.ratio.value = 3; compressor.attack.value = 0.01; compressor.release.value = 0.25; master.connect(compressor); compressor.connect(ctx.destination);
 
   reverb = ctx.createConvolver();
-  const ir = ctx.createBuffer(2, ctx.sampleRate * 2, ctx.sampleRate);
+  const ir = ctx.createBuffer(2, ctx.sampleRate * 1.4, ctx.sampleRate);
   for (let c = 0; c < 2; c++) {
     const d = ir.getChannelData(c);
     for (let i = 0; i < d.length; i++) {
-      d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.45));
+      d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.30));
     }
   }
   reverb.buffer = ir;
+  const tapeDelay = ctx.createDelay(1);
+  const tapeTone = ctx.createBiquadFilter();
+  const tapeFeedback = ctx.createGain();
+  const tapeWet = ctx.createGain();
+  tapeDelay.delayTime.value = 0.34;
+  tapeTone.type = 'lowpass'; tapeTone.frequency.value = 1800;
+  tapeFeedback.gain.value = 0.23; tapeWet.gain.value = 0.12;
+  reverb.connect(tapeDelay); tapeDelay.connect(tapeTone);
+  tapeTone.connect(tapeFeedback); tapeFeedback.connect(tapeDelay);
+  tapeTone.connect(tapeWet); tapeWet.connect(master);
 
   const revGain = ctx.createGain();
-  revGain.gain.value = 0.35;
+  revGain.gain.value = 0.22;
   reverb.connect(revGain);
   revGain.connect(master);
 
@@ -605,7 +615,7 @@ function initBreath() {
 
   breathFilter = ctx.createBiquadFilter();
   breathFilter.type = "bandpass";
-  breathFilter.frequency.value = 1250;
+  breathFilter.frequency.value = 650;
   breathFilter.Q.value = 0.9;
 
   breathGain = ctx.createGain();
@@ -624,13 +634,13 @@ function breathLoop(now) {
   if (!audioStarted) return;
   const phase = ((now - breathStartTime) % breathDuration) / breathDuration;
   const amp = phase < 0.32 ? Math.sin((phase / 0.32) * Math.PI / 2) : phase < 0.76 ? Math.cos(((phase - 0.32) / 0.44) * Math.PI / 2) : 0;
-  breathGain.gain.setTargetAtTime(amp * 0.11, ctx.currentTime, 0.12);
+  breathGain.gain.setTargetAtTime(amp * 0.035, ctx.currentTime, 0.12);
   titleEl.style.setProperty("--breath", amp.toFixed(4));
   requestAnimationFrame(breathLoop);
 }
 
 function breathIn() {
-  if (breathGain) breathGain.gain.setTargetAtTime(0.12, ctx.currentTime, 1);
+  if (breathGain) breathGain.gain.setTargetAtTime(0.04, ctx.currentTime, 1);
 }
 
 function breathOut() {
@@ -683,8 +693,8 @@ function unmuteSiteAudio() {
 document.getElementById("sound-toggle").addEventListener("click", e => {
   ambienceMuted = !ambienceMuted;
   e.currentTarget.setAttribute("aria-pressed", String(ambienceMuted));
-  e.currentTarget.textContent = ambienceMuted ? "Enable ambience" : "Mute ambience";
-  master.gain.setTargetAtTime(ambienceMuted ? 0 : 1, ctx.currentTime, 0.2);
+  e.currentTarget.textContent = ambienceMuted ? "Sound on" : "Sound off";
+  if (master) master.gain.setTargetAtTime(ambienceMuted ? 0 : 1, ctx.currentTime, 0.2);
 });
 
 /* ===== INTERACTION ===== */
@@ -860,13 +870,13 @@ function initRitualArp() {
   driftDepth.connect(droneFilter.frequency);
   drift.start();
 
-  // Original D-minor ostinato: steady eighth notes at 96 BPM.
+  // Sparse D-minor analog pulse with space for tape echoes, 84 BPM.
   const notes = [73.42, 110, 146.83, 174.61, 196, 220, 261.63];
   const patterns = [
-    [0, 1, 2, 3, 0, 1, 2, 1, 0, 1, 2, 6, 3, 2, 1, -1],
-    [0, 1, 2, 3, 0, 1, 4, 3, 0, 1, 2, 6, 5, 3, 2, -1]
+    [0, -1, 0, 2, -1, -1, 3, -1, 0, -1, 0, 1, -1, 2, -1, -1],
+    [0, -1, 0, 2, -1, 3, -1, -1, 0, -1, 4, -1, 3, 2, -1, -1]
   ];
-  const eighth = 60 / 96 / 2;
+  const eighth = 60 / 84 / 2;
   let nextPulse = ctx.currentTime + .08;
 
   function synthNote(freq, time, accent, bass = false) {
@@ -875,15 +885,15 @@ function initRitualArp() {
     const filter = ctx.createBiquadFilter();
     const gain = ctx.createGain();
     const shadowLevel = ctx.createGain();
-    osc.type = bass ? "triangle" : "sawtooth";
+    osc.type = bass ? "triangle" : "square";
     shadow.type = "sawtooth";
     osc.frequency.value = shadow.frequency.value = freq;
     shadow.detune.value = -6;
-    shadowLevel.gain.value = .18;
+    shadowLevel.gain.value = .12;
     const openness = .5 + .5 * Math.sin(ritualPulseCount * Math.PI / 64);
     filter.type = "lowpass";
     filter.Q.value = bass ? .7 : 1.1;
-    filter.frequency.setValueAtTime(bass ? 180 : 500 + openness * 650 + accent * 180, time);
+    filter.frequency.setValueAtTime(bass ? 180 : 380 + openness * 380 + accent * 130, time);
     filter.frequency.exponentialRampToValueAtTime(bass ? 85 : 220, time + .24);
     gain.gain.setValueAtTime(.0001, time);
     gain.gain.exponentialRampToValueAtTime(bass ? .15 : .12 + accent * .035, time + .012);
