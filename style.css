@@ -977,3 +977,32 @@ body {
 }
 @media(prefers-reduced-motion:reduce) { .logo-stage { animation:none; } .logo-piece,.about-hint { transition:none; } }
 @media(max-width:600px) { .about-hint { font-size:11px; margin-top:10px; } }
+
+/* Razor fractures: irregular cuts, each piece moves independently. */
+.logo-piece-0 { clip-path:polygon(0% 0%,23% 0%,29% 26%); --x:-18.3px; --y:-19.8px; --turn:2.5deg; }
+.logo-piece-1 { clip-path:polygon(0% 0%,29% 26%,0% 34%); --x:-22.6px; --y:-14.4px; --turn:-3.6deg; }
+.logo-piece-2 { clip-path:polygon(23% 0%,48% 0%,29% 26%); --x:-9.3px; --y:-19.8px; --turn:4.7deg; }
+.logo-piece-3 { clip-path:polygon(48% 0%,46% 40%,29% 26%); --x:-5.0px; --y:-13.4px; --turn:-5.8deg; }
+.logo-piece-4 { clip-path:polygon(48% 0%,73% 0%,78% 30%); --x:9.1px; --y:-19.2px; --turn:2.5deg; }
+.logo-piece-5 { clip-path:polygon(48% 0%,78% 30%,46% 40%); --x:4.1px; --y:-12.8px; --turn:-3.6deg; }
+.logo-piece-6 { clip-path:polygon(73% 0%,100% 0%,78% 30%); --x:18.9px; --y:-19.2px; --turn:4.7deg; }
+.logo-piece-7 { clip-path:polygon(100% 0%,100% 34%,78% 30%); --x:23.9px; --y:-13.8px; --turn:-5.8deg; }
+.logo-piece-8 { clip-path:polygon(0% 34%,29% 26%,0% 66%); --x:-22.6px; --y:-3.8px; --turn:2.5deg; }
+.logo-piece-9 { clip-path:polygon(29% 26%,19% 73%,0% 66%); --x:-19.0px; --y:2.4px; --turn:-3.6deg; }
+.logo-piece-10 { clip-path:polygon(29% 26%,46% 40%,55% 61%); --x:-3.7px; --y:-3.7px; --turn:4.7deg; }
+.logo-piece-11 { clip-path:polygon(29% 26%,55% 61%,19% 73%); --x:-8.8px; --y:1.6px; --turn:-5.8deg; }
+.logo-piece-12 { clip-path:polygon(46% 40%,78% 30%,55% 61%); --x:5.4px; --y:-3.0px; --turn:2.5deg; }
+.logo-piece-13 { clip-path:polygon(78% 30%,71% 76%,55% 61%); --x:10.1px; --y:2.7px; --turn:-3.6deg; }
+.logo-piece-14 { clip-path:polygon(78% 30%,100% 34%,100% 66%); --x:23.9px; --y:-3.2px; --turn:4.7deg; }
+.logo-piece-15 { clip-path:polygon(78% 30%,100% 66%,71% 76%); --x:18.5px; --y:3.5px; --turn:-5.8deg; }
+.logo-piece-16 { clip-path:polygon(0% 66%,19% 73%,25% 100%); --x:-19.8px; --y:14.2px; --turn:2.5deg; }
+.logo-piece-17 { clip-path:polygon(0% 66%,25% 100%,0% 100%); --x:-23.3px; --y:18.6px; --turn:-3.6deg; }
+.logo-piece-18 { clip-path:polygon(19% 73%,55% 61%,25% 100%); --x:-9.5px; --y:13.4px; --turn:4.7deg; }
+.logo-piece-19 { clip-path:polygon(55% 61%,50% 100%,25% 100%); --x:-3.7px; --y:17.8px; --turn:-5.8deg; }
+.logo-piece-20 { clip-path:polygon(55% 61%,71% 76%,75% 100%); --x:9.5px; --y:13.9px; --turn:2.5deg; }
+.logo-piece-21 { clip-path:polygon(55% 61%,75% 100%,50% 100%); --x:5.6px; --y:17.8px; --turn:-3.6deg; }
+.logo-piece-22 { clip-path:polygon(71% 76%,100% 66%,75% 100%); --x:17.9px; --y:14.7px; --turn:4.7deg; }
+.logo-piece-23 { clip-path:polygon(100% 66%,100% 100%,75% 100%); --x:23.3px; --y:18.6px; --turn:-5.8deg; }
+.logo-piece { transition:transform .22s cubic-bezier(.12,.86,.22,1); filter:drop-shadow(1px 1px 0 #d9ba8555) drop-shadow(3px 5px 2px #000); }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { #about-trigger:hover .logo-stage { animation-play-state:paused; } }
+@media(prefers-reduced-motion:no-preference) { #about-trigger:focus-visible .logo-stage { animation-play-state:paused; } }

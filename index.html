@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=logo-fracture-1">
+  <link rel="stylesheet" href="style.css?v=razor-fracture-2">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 
   <div class="portfolio-top"><span>Original music &amp; sound</span><a href="mailto:john.ryder.production@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
   <section class="hero">
-    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><span class="logo-stage"><img class="title-logo" src="johnny-e-1982-transparent.png" alt="Johnny E" width="1774" height="887" fetchpriority="high"><span class="logo-piece logo-piece-0" aria-hidden="true"></span><span class="logo-piece logo-piece-1" aria-hidden="true"></span><span class="logo-piece logo-piece-2" aria-hidden="true"></span><span class="logo-piece logo-piece-3" aria-hidden="true"></span><span class="logo-piece logo-piece-4" aria-hidden="true"></span><span class="logo-piece logo-piece-5" aria-hidden="true"></span></span><span class="about-hint" aria-hidden="true">About Johnny E <span>↗</span></span></button></h1>
+    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><span class="logo-stage"><img class="title-logo" src="johnny-e-1982-transparent.png" alt="Johnny E" width="1774" height="887" fetchpriority="high"><span class="logo-piece logo-piece-0" aria-hidden="true"></span><span class="logo-piece logo-piece-1" aria-hidden="true"></span><span class="logo-piece logo-piece-2" aria-hidden="true"></span><span class="logo-piece logo-piece-3" aria-hidden="true"></span><span class="logo-piece logo-piece-4" aria-hidden="true"></span><span class="logo-piece logo-piece-5" aria-hidden="true"></span><span class="logo-piece logo-piece-6" aria-hidden="true"></span><span class="logo-piece logo-piece-7" aria-hidden="true"></span><span class="logo-piece logo-piece-8" aria-hidden="true"></span><span class="logo-piece logo-piece-9" aria-hidden="true"></span><span class="logo-piece logo-piece-10" aria-hidden="true"></span><span class="logo-piece logo-piece-11" aria-hidden="true"></span><span class="logo-piece logo-piece-12" aria-hidden="true"></span><span class="logo-piece logo-piece-13" aria-hidden="true"></span><span class="logo-piece logo-piece-14" aria-hidden="true"></span><span class="logo-piece logo-piece-15" aria-hidden="true"></span><span class="logo-piece logo-piece-16" aria-hidden="true"></span><span class="logo-piece logo-piece-17" aria-hidden="true"></span><span class="logo-piece logo-piece-18" aria-hidden="true"></span><span class="logo-piece logo-piece-19" aria-hidden="true"></span><span class="logo-piece logo-piece-20" aria-hidden="true"></span><span class="logo-piece logo-piece-21" aria-hidden="true"></span><span class="logo-piece logo-piece-22" aria-hidden="true"></span><span class="logo-piece logo-piece-23" aria-hidden="true"></span></span><span class="about-hint" aria-hidden="true">About Johnny E <span>↗</span></span></button></h1>
 
   </section>
 
@@ -591,18 +591,23 @@ function crackMaterial() {
   const now = ctx.currentTime;
   if (now-lastCrack < .18) return;
   lastCrack = now;
-  const length = Math.floor(ctx.sampleRate*.19);
+  const length = Math.floor(ctx.sampleRate*.32);
   const buffer = ctx.createBuffer(1,length,ctx.sampleRate);
   const samples = buffer.getChannelData(0);
+  const chips = [[0,1,.006],[.009,.72,.004],[.026,.42,.009],[.049,.24,.006],[.085,.16,.012],[.131,.09,.014]];
   for (let i=0;i<length;i++) {
     const t=i/ctx.sampleRate;
-    const envelope = Math.exp(-t*85) + (t>.023 ? .52*Math.exp(-(t-.023)*110):0) + (t>.061 ? .25*Math.exp(-(t-.061)*70):0);
-    samples[i]=(Math.random()*2-1)*envelope;
+    let env=0;
+    for (const [start,level,decay] of chips) if(t>=start) env+=level*Math.exp(-(t-start)/decay);
+    const dry=(Math.random()*2-1)*env;
+    const grit=(Math.sin(2*Math.PI*1733*t)+.5*Math.sin(2*Math.PI*2861*t)+.3*Math.sin(2*Math.PI*4217*t))*Math.exp(-t*34)*.065;
+    const body=Math.sin(2*Math.PI*190*t)*Math.exp(-t*95)*.24;
+    samples[i]=Math.tanh((dry+grit+body)*1.7)*Math.min(t/.0003,1);
   }
   const source=ctx.createBufferSource(); source.buffer=buffer;
-  const high=ctx.createBiquadFilter(); high.type='highpass'; high.frequency.value=470;
-  const low=ctx.createBiquadFilter(); low.type='lowpass'; low.frequency.value=6200;
-  const gain=ctx.createGain(); gain.gain.value=.16;
+  const high=ctx.createBiquadFilter(); high.type='highpass'; high.frequency.value=160;
+  const low=ctx.createBiquadFilter(); low.type='lowpass'; low.frequency.value=8700;
+  const gain=ctx.createGain(); gain.gain.value=.2;
   source.connect(high); high.connect(low); low.connect(gain); gain.connect(effectsGain);
   source.start(now); source.onended=()=>{source.disconnect();high.disconnect();low.disconnect();gain.disconnect();};
 }
