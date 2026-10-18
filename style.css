@@ -953,3 +953,27 @@ body {
 .external-watch:hover { color:#fff0d4; text-decoration:underline; }
 @media(max-width:800px) { .band-records { grid-template-columns:1fr; } .band-album { width:min(100%,390px); margin:auto; } .band-video-grid { grid-template-columns:1fr; } .categories .bands-node { grid-template-columns:1fr 1fr; } .bands-node .label { grid-column:1 / -1; } .bands-node .node-description { padding:10px 0; } }
 @media(max-width:600px) { .categories .bands-node { display:flex; min-height:225px; align-items:flex-start; gap:0; } .bands-node .label { font-size:38px; margin:24px 0 16px; } .bands-node .node-description { padding:0; } .bands-node .node-bottom { margin-top:25px; width:100%; } .band-album,.band-track,.band-video { padding:14px; } #bands-overlay { padding:70px 20px 40px; } }
+
+/* The original logo separates into six pieces; its artwork stays intact. */
+.logo-stage { position:relative; display:block; width:100%; animation:logo-swell 8s ease-in-out infinite; transform-origin:center; }
+.logo-stage .title-logo { animation:none; transform:none; filter:none; }
+.logo-piece { position:absolute; inset:0; background:url('johnny-e-1982-transparent.png') center / 100% 100% no-repeat; opacity:0; pointer-events:none; transition:transform .3s cubic-bezier(.18,.8,.25,1); }
+.logo-piece-0 { clip-path:polygon(0 0,36% 0,26% 44%,0 72%); --x:-12px; --y:-6px; --turn:-2deg; }
+.logo-piece-1 { clip-path:polygon(36% 0,70% 0,58% 42%,26% 44%); --x:0px; --y:-12px; --turn:1deg; }
+.logo-piece-2 { clip-path:polygon(70% 0,100% 0,100% 45%,58% 42%); --x:13px; --y:-7px; --turn:2deg; }
+.logo-piece-3 { clip-path:polygon(0 72%,26% 44%,43% 43%,34% 100%,0 100%); --x:-10px; --y:8px; --turn:-2deg; }
+.logo-piece-4 { clip-path:polygon(43% 43%,58% 42%,73% 43%,63% 100%,34% 100%); --x:2px; --y:12px; --turn:1deg; }
+.logo-piece-5 { clip-path:polygon(73% 43%,100% 45%,100% 100%,63% 100%); --x:13px; --y:7px; --turn:2deg; }
+.about-hint { display:inline-flex; align-items:center; gap:14px; margin-top:16px; padding:9px 17px; border-bottom:1px solid #a77b55; color:#cfb89a; font:600 12px/1.2 'Barlow Condensed',sans-serif; letter-spacing:.18em; text-transform:uppercase; text-shadow:none; transition:color .2s,border-color .2s; }
+.about-hint > span { font-size:19px; line-height:1; }
+#about-trigger:hover .about-hint,#about-trigger:focus-visible .about-hint { color:#fff0d4; border-color:#d35b44; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ #about-trigger:hover .title-logo { opacity:0; }
+ #about-trigger:hover .logo-piece { opacity:1; transform:translate(var(--x),var(--y)) rotate(var(--turn)); }
+}
+@media(prefers-reduced-motion:no-preference) {
+ #about-trigger:focus-visible .title-logo { opacity:0; }
+ #about-trigger:focus-visible .logo-piece { opacity:1; transform:translate(var(--x),var(--y)) rotate(var(--turn)); }
+}
+@media(prefers-reduced-motion:reduce) { .logo-stage { animation:none; } .logo-piece,.about-hint { transition:none; } }
+@media(max-width:600px) { .about-hint { font-size:11px; margin-top:10px; } }

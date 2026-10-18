@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=bands-live-1">
+  <link rel="stylesheet" href="style.css?v=logo-fracture-1">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 
   <div class="portfolio-top"><span>Original music &amp; sound</span><a href="mailto:john.ryder.production@gmail.com">Get in touch <span aria-hidden="true">↗</span></a></div>
   <section class="hero">
-    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><img class="title-logo" src="johnny-e-1982-transparent.png" alt="Johnny E" width="1774" height="887" fetchpriority="high"></button></h1>
+    <h1 class="image-title"><button id="about-trigger" type="button" aria-label="About Johnny E"><span class="logo-stage"><img class="title-logo" src="johnny-e-1982-transparent.png" alt="Johnny E" width="1774" height="887" fetchpriority="high"><span class="logo-piece logo-piece-0" aria-hidden="true"></span><span class="logo-piece logo-piece-1" aria-hidden="true"></span><span class="logo-piece logo-piece-2" aria-hidden="true"></span><span class="logo-piece logo-piece-3" aria-hidden="true"></span><span class="logo-piece logo-piece-4" aria-hidden="true"></span><span class="logo-piece logo-piece-5" aria-hidden="true"></span></span><span class="about-hint" aria-hidden="true">About Johnny E <span>↗</span></span></button></h1>
 
   </section>
 
@@ -606,7 +606,7 @@ function crackMaterial() {
   source.connect(high); high.connect(low); low.connect(gain); gain.connect(effectsGain);
   source.start(now); source.onended=()=>{source.disconnect();high.disconnect();low.disconnect();gain.disconnect();};
 }
-document.querySelectorAll('.node').forEach(node=>{
+document.querySelectorAll('.node, #about-trigger').forEach(node=>{
   node.addEventListener('pointerenter', event=>{if(event.pointerType!=='touch') crackMaterial();});
   node.addEventListener('focus',()=>{if(node.matches(':focus-visible')) crackMaterial();});
 });
