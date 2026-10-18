@@ -926,3 +926,30 @@ body {
   .node:focus-visible .fracture-art i { animation:hold-chip .3s ease-out both; }
   .categories .node:focus-visible::after { opacity:.7; }
 }
+
+/* Bands & Live: a bonus sleeve with records and a video archive. */
+.categories .bands-node { grid-column:1 / -1; min-height:150px; display:grid; grid-template-columns:minmax(240px,1fr) 1fr auto; column-gap:30px; align-items:center; }
+.bands-node .node-number { grid-column:1 / -1; padding-bottom:8px; }
+.bands-node .label { margin:18px 0 5px; font-size:40px; }
+.bands-node .node-description { max-width:none; padding-top:12px; }
+.bands-node .node-bottom { margin:12px 0 0; padding:0; border:0; width:auto; gap:14px; }
+#bands-overlay { padding:70px 5vw 60px; }
+.bands-content { width:100%; max-width:1100px; margin:auto; }
+.bands-header { border-bottom:3px double #9d8059; padding:0 0 28px; margin-bottom:32px; }
+.sleeve-kicker { color:#c6aa86; font:600 12px 'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.2em; }
+.bands-header h2 { font:700 italic clamp(46px,7vw,80px)/1 'Barlow Condensed',sans-serif; color:#e5d5b7; text-transform:uppercase; text-shadow:3px 4px #682a21; margin:12px 0 16px; }
+.bands-header p { color:#c4b9a8; font:14px/1.7 Inter,sans-serif; }
+.band-section-title { font:600 15px 'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.16em; color:#c8ac87; margin:34px 0 20px; }
+.band-records { display:grid; grid-template-columns:390px minmax(0,1fr); gap:26px; align-items:start; }
+.band-album,.band-track,.band-video { min-width:0; padding:20px; background:linear-gradient(145deg,#30261d,#17130f 60%); border:1px solid #8c735277; border-top:3px double #b19565; box-shadow:5px 5px #090705; }
+.band-album h3,.band-track h3,.band-caption h3 { margin:0 0 16px; color:#eadcc4; font:700 italic 26px/1.15 'Barlow Condensed',sans-serif; text-transform:uppercase; text-shadow:2px 2px #70291e; }
+.band-album iframe { display:block; max-width:100%; margin:auto; }
+.band-tracks { display:grid; gap:24px; }
+.band-track iframe { display:block; border:0; width:100%; height:166px; background:#eee; }
+.band-video-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+.band-caption span { display:block; font:600 11px 'Barlow Condensed',sans-serif; color:#c6aa86; letter-spacing:.12em; text-transform:uppercase; margin-bottom:7px; }
+.band-video .project-video { background:#080706; }
+.external-watch { display:inline-block; margin-top:14px; color:#d4b998; font:600 12px 'Barlow Condensed',sans-serif; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+.external-watch:hover { color:#fff0d4; text-decoration:underline; }
+@media(max-width:800px) { .band-records { grid-template-columns:1fr; } .band-album { width:min(100%,390px); margin:auto; } .band-video-grid { grid-template-columns:1fr; } .categories .bands-node { grid-template-columns:1fr 1fr; } .bands-node .label { grid-column:1 / -1; } .bands-node .node-description { padding:10px 0; } }
+@media(max-width:600px) { .categories .bands-node { display:flex; min-height:225px; align-items:flex-start; gap:0; } .bands-node .label { font-size:38px; margin:24px 0 16px; } .bands-node .node-description { padding:0; } .bands-node .node-bottom { margin-top:25px; width:100%; } .band-album,.band-track,.band-video { padding:14px; } #bands-overlay { padding:70px 20px 40px; } }
