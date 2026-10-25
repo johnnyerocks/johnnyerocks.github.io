@@ -4,3 +4,5 @@
 h1{width:min(1080px,100%)}h1 button{display:block;width:100%;text-shadow:none}h1 .title-logo{display:block;width:100%;height:auto}.picture-track{display:block}.picture-item{display:block;width:100%}
 
 .about-portrait{aspect-ratio:1;object-fit:cover;object-position:center top}
+
+.bands-players .project-video{margin-top:0}.album-player{display:flex;justify-content:center;margin:36px 0}.album-player iframe{max-width:100%}.bands-players .band-tracks{display:grid;gap:28px}.bands-players .band-tracks iframe{display:block;width:100%;border:0}
